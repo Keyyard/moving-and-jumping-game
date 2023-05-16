@@ -45,9 +45,7 @@ game_over = 0
 while run:
     # creates time delay of 10ms 
     pygame.time.delay(10)
-      
-
-    # iterate over the list of Event objects  
+       # iterate over the list of Event objects  
     # that was returned by pygame.event.get() method.  
     for event in pygame.event.get():
           
