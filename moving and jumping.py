@@ -118,8 +118,6 @@ while run:
     if x < 5:
         #randomize the obstacle position number that % 50 = 0
         obstacle_x = random.randint(100, 460)
-        if obstacle_x % 50 != 0:
-            obstacle_x = random.randint(100, 460)
         obstacle_y = 400
         obstacle_width = 40
         obstacle_height = 40
