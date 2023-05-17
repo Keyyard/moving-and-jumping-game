@@ -39,6 +39,7 @@ isJump = False
 jumpCount = 15
 
 point = 0
+high_score = 0
 # Game over test
 game_over = 0
 # infinite loop so it checks every change made to run
@@ -73,7 +74,8 @@ while run:
     if x > 500:
         x = 0
         point = point + 1 #add point
-    
+        if point > high_score:
+            high_score = point
          # if not jumping
     if not(isJump): 
         # if space bar is pressed
@@ -155,7 +157,10 @@ while run:
     #points
     font = pygame.font.SysFont("comicsansms", 20)
     text = font.render("Point: " + str(point), True, (255, 255, 255))
+    high_score_text = font.render("High Score: " + str(high_score), True, (255, 255, 255))
     keyyard.blit(text, (10, 10))
+    high_score_text_end_x = high_score_text.get_width()
+    keyyard.blit(high_score_text, (500-high_score_text_end_x - 10, 10))
     # game over
     if game_over == 1:
         font_title = pygame.font.SysFont("comicsansms", 40)
@@ -181,9 +186,6 @@ while run:
         point = 0
     # render player
     keyyard.blit(player, (x, y))
-    #  if points % 5 = 0, increase the speed
-    if point % 3 == 0 and point != 0:
-        vel = vel + 0.05
     # it refreshes the window
     pygame.display.update() 
 # closes the pygame window 
