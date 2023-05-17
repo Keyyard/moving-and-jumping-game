@@ -106,6 +106,7 @@ while run:
     #ground cover screen
     for i in range(0, 500, 80):
         keyyard.blit(ground, (i, 420))
+    # randomize remove the ground
 
     #pygame.draw.rect(keyyard, (160, 231, 125), (0, 420, 500, 500))
     # drawing player on screen which is rectangle here 
@@ -182,6 +183,9 @@ while run:
         point = 0
     # render player
     keyyard.blit(player, (x, y))
+    #  if points % 5 = 0, increase the speed
+    if point % 3 == 0 and point != 0:
+        vel = vel + 0.05
     # it refreshes the window
     pygame.display.update() 
 # closes the pygame window 
