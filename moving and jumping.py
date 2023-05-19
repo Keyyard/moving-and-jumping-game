@@ -78,7 +78,9 @@ while run:
             high_score = point
          # if not jumping
     if not(isJump): 
-        # if space bar is pressed
+        if keys[pygame.K_SPACE] and game_over == 0:
+            isJump = True
+            # if space bar is pressed
         if keys[pygame.K_SPACE] and game_over == 0:
             isJump = True
     else:
